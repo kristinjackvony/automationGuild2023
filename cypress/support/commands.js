@@ -1,3 +1,5 @@
+import "@cypress-audit/lighthouse/commands"
+
 Cypress.Commands.add('loginAPI', () => {
     cy.request({
         failOnStatusCode: false,
@@ -7,8 +9,6 @@ Cypress.Commands.add('loginAPI', () => {
             'email': 'oneitem@fake.com',
             'password': 'foobarfoo'
         }
-    }).then((response) => {
-        Cypress.env('token', response.body.token)
     })
 })
 
@@ -21,7 +21,7 @@ Cypress.Commands.add('addContactAPI', (Contact) => {
         body: {
             'firstName': Contact.firstName,
             'lastName': Contact.lastName,
-            }
+        }
     })
 })
 
@@ -52,7 +52,7 @@ Cypress.Commands.add('updateContactAPI', (id, Contact) => {
         body: {
             'firstName': Contact.firstName,
             'lastName': Contact.lastName,
-            }
+        }
     })
 })
 
@@ -63,4 +63,8 @@ Cypress.Commands.add('deleteContactAPI', (id) => {
         url: `http://thinking-tester-contact-list.herokuapp.com/contacts/${id}`,
         headers: {'Authorization': `Bearer ${Cypress.env('token')}` }
     })
+})
+
+Cypress.Commands.add('getContactDetails', (Contact) => {
+    cy.contains(Contact.firstName + ' ' + Contact.lastName).click()
 })

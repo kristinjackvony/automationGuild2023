@@ -1,7 +1,9 @@
 describe('Add Contact', () => {
 
-	beforeEach(() => {
-	cy.loginAPI()
+	before(() => {
+	cy.loginAPI().then((response) => {
+        Cypress.env('token', response.body.token)
+    })
   })
 
   	it('Adds a new contact', () => {

@@ -1,7 +1,9 @@
 describe('Get Contact List', () => {
 
 	beforeEach(() => {
-    	cy.loginAPI()
+    	cy.loginAPI().then((response) => {
+			Cypress.env('token', response.body.token)
+		})
   	})
 
   	it('Gets the contact list', () => {

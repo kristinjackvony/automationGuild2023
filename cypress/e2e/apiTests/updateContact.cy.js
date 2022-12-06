@@ -1,7 +1,9 @@
 describe('Update Contact', () => {
 
 	beforeEach(() => {
-	cy.loginAPI()
+	cy.loginAPI().then((response) => {
+        Cypress.env('token', response.body.token)
+    })
   })
 
   	it('Updates a contact', () => {
