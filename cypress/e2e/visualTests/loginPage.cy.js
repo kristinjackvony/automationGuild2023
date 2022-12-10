@@ -1,4 +1,4 @@
-describe('Add Contact', () => {
+describe('Login Page Visual Tests', () => {
 
   beforeEach(() => {
     cy.visit('/')
@@ -19,7 +19,7 @@ describe('Add Contact', () => {
     cy.eyesClose()       
   })
 
-  it('Returns error when login fails', () => {
+  it('Displays error when login fails', () => {
     cy.get('#email').type('oneitem@fake.com')
     cy.get('#password').type('badpassword')
     cy.get('#submit').click()
