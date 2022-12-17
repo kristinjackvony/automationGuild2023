@@ -7,7 +7,8 @@
     "test": "npx cypress run --browser chrome",
     "apiTests": "npx cypress run --spec 'cypress/e2e/apiTests' --browser chrome",
     "performanceTests": "npx cypress run --spec 'cypress/e2e/performanceTests' --browser chrome",
-    "visualTests": "npx cypress run --spec 'cypress/e2e/visualTests' --browser chrome"
+    "visualTests": "npx cypress run --spec 'cypress/e2e/visualTests' --browser chrome",
+    "securityTests": "npx cypress run --spec 'cypress/e2e/securityTests' --browser chrome"
   },
   "keywords": [],
   "author": "",
