@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse")
+const { pa11y } = require("@cypress-audit/pa11y")
 
 module.exports = defineConfig({
   video: false,
@@ -11,7 +12,8 @@ module.exports = defineConfig({
       })
 
       on("task", {
-        lighthouse: lighthouse()
+        lighthouse: lighthouse(),
+        pa11y: pa11y(),
       })
     },
   },
