@@ -40,6 +40,6 @@ describe('Add Contact Page Visual Tests', () => {
       })
   
       cy.eyesClose()
-      })
+    })
       
   })

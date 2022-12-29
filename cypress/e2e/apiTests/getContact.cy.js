@@ -4,9 +4,9 @@ describe('Get Contact', () => {
 		cy.loginAPI().then((response) => {
 			Cypress.env('token', response.body.token)
 		})
-  	})
+  })
 
-  	it('Gets a contact', () => {
+  it('Gets a contact', () => {
 		cy.addContactAPI(Cypress.env('Contact')).then((response) => {
 			var id = response.body._id
 			cy.getContactAPI(id).should((response) => {

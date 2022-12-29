@@ -11,17 +11,17 @@ describe('Update Contact Security', () => {
 			Cypress.env('token', response.body.token)
 		})
 		cy.addContactAPI(Cypress.env('Contact')).then((response) => {
-		var id = response.body._id
-		cy.request({
-			failOnStatusCode: false,
-			method: 'PUT',
+			var id = response.body._id
+			cy.request({
+				failOnStatusCode: false,
+				method: 'PUT',
         url: `http://thinking-tester-contact-list.herokuapp.com/contacts/${id}`,
         body: {
           'firstName': 'Joe',
           'lastName': 'Schmoe'
         }
-		}).should((response) => {
-			expect(response.status).to.eq(401)
+			}).should((response) => {
+				expect(response.status).to.eq(401)
 			}).then(() => {
 				cy.deleteContactAPI(id)
 			})

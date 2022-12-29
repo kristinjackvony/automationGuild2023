@@ -1,7 +1,6 @@
 describe('Contact List Page Visual Tests', () => {
   
   it('Contact List page renders correctly', () => {
-
     cy.loginAPI().then((response) => {
       Cypress.env('token', response.body.token)
 		})
@@ -17,9 +16,9 @@ describe('Contact List Page Visual Tests', () => {
       tag: "Contact List Window",
       target: 'window',
       fully: true
-    });
-  
-      cy.eyesClose()       
     })
-      
+  
+    cy.eyesClose()       
   })
+      
+})

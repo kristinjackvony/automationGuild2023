@@ -14,7 +14,7 @@ describe('Login Page Visual Tests', () => {
       tag: "Login Window",
       target: 'window',
       fully: true
-    });
+    })
 
     cy.eyesClose()       
   })
@@ -33,7 +33,7 @@ describe('Login Page Visual Tests', () => {
       tag: "Login Error Message",
       target: 'window',
       fully: true
-    });
+    })
 
     cy.eyesClose()
 	})

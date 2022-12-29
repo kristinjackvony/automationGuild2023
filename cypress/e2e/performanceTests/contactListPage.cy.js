@@ -2,7 +2,7 @@ describe('Contact List page performance', () => {
     
   beforeEach(() => {
     cy.loginAPI().then((response) => {
-          Cypress.env('token', response.body.token)
+      Cypress.env('token', response.body.token)
     })
   })
   
@@ -20,5 +20,6 @@ describe('Contact List page performance', () => {
     cy.getContactListAPI().then((response) => {
       expect(response.duration).to.not.be.greaterThan(300)
     })
-  })
+	})
+	
 })

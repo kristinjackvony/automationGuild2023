@@ -6,7 +6,7 @@ describe('Add Contact', () => {
     })
   })
 
-  	it('Adds a new contact', () => {
+  it('Adds a new contact', () => {
 		cy.addContactAPI(Cypress.env('Contact')).then((response) => {
 			var id = response.body._id
 			cy.getContactAPI(id).should((response) => {
