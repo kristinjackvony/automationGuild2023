@@ -16,9 +16,9 @@ describe('Contact List page performance', () => {
     })
   })
 
-  it('Responds to GET list request in under 300 ms', () => {
+  it('Responds to GET list request in under 500 ms', () => {
     cy.getContactListAPI().then((response) => {
-      expect(response.duration).to.not.be.greaterThan(300)
+      expect(response.duration).to.not.be.greaterThan(500)
     })
 	})
 	

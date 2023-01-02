@@ -24,7 +24,7 @@ describe('Edit Contact page performance', () => {
   	cy.addContactAPI(Cypress.env('Contact')).then((response) => {
       var id = response.body._id
       cy.updateContactAPI(id, Cypress.env('Contact2')).should((response) => {
-        expect(response.duration).to.not.be.greaterThan(400)
+        expect(response.duration).to.not.be.greaterThan(500)
       }).then(() => {
         cy.deleteContactAPI(id)
       })

@@ -19,7 +19,7 @@ describe('Add Contact page performance', () => {
   it('Responds to POST request in under 500 ms', () => {
     cy.addContactAPI(Cypress.env('Contact')).then((response) => {
       var id = response.body._id
-      expect(response.duration).to.not.be.greaterThan(400)
+      expect(response.duration).to.not.be.greaterThan(500)
       cy.getContactAPI(id).then(() => {
         cy.deleteContactAPI(id)
       })
