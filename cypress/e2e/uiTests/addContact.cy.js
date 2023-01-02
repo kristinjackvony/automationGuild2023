@@ -25,7 +25,7 @@ describe('Add Contact', () => {
     cy.on('window:confirm', () => true)
   })
 
-  it('Returns an appropriate error message when a field is invalid', () => {
+  it('Returns an appropriate error message when a required field is missing', () => {
     cy.get('#add-contact').click()
     cy.get('#firstName').type("Prunella")
     cy.get('#submit').click()
